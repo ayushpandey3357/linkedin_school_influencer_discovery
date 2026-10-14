@@ -119,6 +119,9 @@ class CandidateProfile(BaseModel):
 class ReferenceProfile(BaseModel):
     """Reference profile provided by the user to discover similar school ecosystem influencers."""
 
+    profile_id: Optional[str] = Field(
+        default=None, description="Optional stable profile ID (e.g. SYN-001 or IMP-001)"
+    )
     name: str = Field(default="Reference Professional")
     linkedin_url: Optional[str] = Field(
         default=None, description="Optional LinkedIn URL (manual entry fallback provided)"

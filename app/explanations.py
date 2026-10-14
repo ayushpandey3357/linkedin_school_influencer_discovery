@@ -46,50 +46,75 @@ class ExplanationEngine:
         else:
             qualifier = "Low relevance match"
 
-        sentences.append(f"{provenance_tag} {qualifier} with a score of {score:.1f}/100.")
+        sentences.append(f"{provenance_tag} {qualifier} with an overall relevance score of {score:.1f}/100.")
 
-        # 2. Concrete role and evidence from profile fields
+        # 2. Concrete role and verified employment evidence
         evidence_points: List[str] = []
-
-        # School leadership / role evidence
         role_lower = p.current_role.lower()
         if any(k in role_lower for k in ["principal", "headmistress", "headmaster", "dean"]):
             evidence_points.append(f"serves or served as {p.current_role}")
         elif any(k in role_lower for k in ["trustee", "owner", "managing director", "promoter"]):
             evidence_points.append(f"holds institutional governance authority as {p.current_role}")
         elif any(k in role_lower for k in ["consultant", "advisor", "advisory"]):
-            evidence_points.append(f"operates as an education consultant ({p.current_role})")
-        elif "Not specified" not in p.current_role:
+            evidence_points.append(f"operates as an education consultant / advisor ({p.current_role})")
+        elif "not specified" not in role_lower:
             evidence_points.append(f"current role is {p.current_role}")
 
-        # Organization citation
         if p.organization and p.organization.lower() != "not specified":
             evidence_points.append(f"at {p.organization}")
 
-        # Multi-school indicator citation
-        if p.school_ecosystem_indicators:
-            first_indicator = p.school_ecosystem_indicators[0]
-            if first_indicator.lower() != "not specified":
-                evidence_points.append(f"demonstrates '{first_indicator}'")
+        if p.experience_years > 0:
+            evidence_points.append(f"with {p.experience_years:g} years documented experience")
 
         if evidence_points:
             joined_evidence = ", ".join(evidence_points)
             sentences.append(f"Profile evidence highlights that candidate {joined_evidence}.")
 
-        # 3. Component score drivers
+        # 3. Component-specific factual evidence from actual dataset fields
+        # A. School ecosystem evidence
+        if scores.school_ecosystem >= 40.0 and p.school_ecosystem_indicators:
+            eco_kw = [
+                "school", "k-12", "cbse", "icse", "cambridge", "ib", "principal",
+                "board", "accreditation", "turnaround", "nep", "curriculum"
+            ]
+            eco_indicators = [
+                ind for ind in p.school_ecosystem_indicators
+                if any(k in ind.lower() for k in eco_kw) and ind.lower() != "not specified"
+            ]
+            if eco_indicators:
+                sentences.append(f"Ecosystem depth supported by: '{eco_indicators[0]}'.")
+
+        # B. Multi-school / consulting reach evidence
+        if scores.multi_school >= 40.0 and p.school_ecosystem_indicators:
+            multi_kw = [
+                "schools", "campuses", "network", "consortium", "trust", "advis",
+                "consult", "turnaround", "cluster", "chain", "multi-"
+            ]
+            multi_indicators = [
+                ind for ind in p.school_ecosystem_indicators
+                if any(k in ind.lower() for k in multi_kw) and ind.lower() != "not specified"
+            ]
+            if multi_indicators:
+                chosen = multi_indicators[0]
+                if len(multi_indicators) > 1 and len(sentences) > 2 and chosen in sentences[-1]:
+                    chosen = multi_indicators[1]
+                if len(sentences) <= 2 or chosen not in sentences[-1]:
+                    sentences.append(f"Multi-school / advisory reach supported by: '{chosen}'.")
+
+        # 4. Component score drivers
         if top_drivers:
             drivers_str = " and ".join(top_drivers)
             sentences.append(f"Primary algorithmic scoring drivers: {drivers_str}.")
         else:
             sentences.append("Relevance is tempered by lower domain overlap in school education.")
 
-        # 4. Low score context (e.g. for non-education control profiles)
+        # 5. Low score context (e.g. for non-education control profiles)
         if score < 35.0:
             sentences.append(
                 "Profile exhibits minimal K-12 school ecosystem experience or educational leadership indicators."
             )
 
-        # 5. Missing data notes
+        # 6. Missing data notes
         if candidate.uncertainties_or_missing:
             noted = "; ".join(candidate.uncertainties_or_missing[:2])
             sentences.append(f"Note on data completeness: {noted}.")

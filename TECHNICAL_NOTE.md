@@ -134,9 +134,41 @@ $$\text{Total Score} = \sum_{k \in \mathcal{K}} w_k \cdot S_k, \quad \text{where
 
 ### Score Normalization & Boundary Protections
 - All components $S_k$ are guaranteed to lie within $[0.0, 100.0]$.
-- Dynamic weight normalization: If a user specifies custom weights that do not sum to 100%, the engine normalizes:
+- **Dynamic Weight Normalization**: Configured weights are validated to sum to 100% ($\pm 10^{-4}$). The normalization function guarantees zero remainder drift:
   $$w'_k = \frac{w_k}{\sum_j w_j}$$
-- **Self-Exclusion Rule**: A candidate identical to the reference profile is automatically filtered out ($R \neq \text{Ref}$).
+- **Deterministic Scoring**: For identical reference and candidate inputs, overall relevance is deterministically calculated as $\sum w_k S_k$. Ties are deterministically resolved by sorting primarily by score descending, then by candidate `profile_id` ascending.
+
+### 4.2 Reference Profile Exclusion Architecture & Root Cause Analysis
+
+#### Root Cause Analysis of Previous 93.6% Self-Recommendation Bug
+In earlier revisions, searching for "Dr. Sunita Sharma (Reference Profile)" returned "Dr. Sunita Sharma (Synthetic Profile)" ranked #1 with a 93.6% relevance score. Investigation revealed three contributing factors:
+1. **Divergent URL Paths**: The reference preset used placeholder `https://example.com/profiles/reference-profile` while candidate SYN-001 used canonical `https://example.com/profiles/syn-001`. Naive equality `ref_url == cand_url` failed.
+2. **Parenthetical Suffix Divergence**: The reference profile name included `(Reference Profile)` or `(Reference Test)`, whereas the candidate dataset record had `(Synthetic Profile)`. Exact string equality `ref_name == cand_name` failed.
+3. **Missing Model Identifier**: The `ReferenceProfile` Pydantic model omitted an optional `profile_id` attribute, preventing direct ID-based identity tracking.
+
+Because SYN-001 possessed near-identical text to the reference query, TF-IDF cosine similarity reached ~85% and domain heuristic components reached 90-95%, yielding a ~93.6% composite score and ranking #1.
+
+#### Multi-Tier Exclusion Hierarchy
+The revised `is_reference_profile_match` function establishes a strict, multi-tiered exclusion hierarchy:
+
+1. **Tier 1 — Stable Profile ID Match**:
+   If `reference.profile_id` is supplied, candidate matching this ID (case-insensitive) is immediately excluded.
+2. **Tier 2 — Normalized Profile URL Match**:
+   URLs are stripped of protocol (`http://`, `https://`), `www.`, tracking parameters (`?trk=...`), fragments (`#...`), and trailing slashes. Non-generic paths matching each other trigger exclusion.
+3. **Tier 3 — Conservative Multi-Field Concordance**:
+   - Base names are cleaned by removing honorifics (`Dr.`, `Mr.`, `Ms.`) and bracketed suffixes (`(Reference Profile)`, `(Synthetic Profile)`).
+   - **Crucial Rule**: Unrelated candidates are **NEVER** excluded on name similarity alone.
+   - Exclusion requires base name match **plus** concordant verification across multiple fields:
+     - Role concordance (identical normalized title or substring overlap)
+     - Organization concordance (both specified and matching)
+     - Location concordance (shared geographic location)
+     - Experience tenure concordance ($|\Delta \text{exp}| \le 1.0\text{ year}$)
+     - Textual summary / indicators high lexical overlap
+   - Excludes candidate if (Role + Organization match) OR if $\ge 3$ independent fields match.
+
+#### Documented Limitations of Conservative Duplicate Check
+- **Homonym Collision with Shared Attributes**: If two genuinely distinct educators share the exact same name, work at the same institution, and hold the exact same role and tenure, the conservative check will treat them as duplicate records.
+- **Unlinked Modified Profiles**: If an educator significantly updates their listed role and organization across different sources and provides neither stable profile ID nor profile URL, conservative matching will deliberately not exclude them to prioritize recall and avoid false-positive candidate suppression.
 
 ---
 

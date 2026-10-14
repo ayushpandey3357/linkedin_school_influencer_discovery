@@ -14,14 +14,16 @@ def test_synthetic_provider_loads_benchmark_dataset():
     provider = SyntheticDatasetProvider()
     profiles = provider.get_profiles()
 
-    # Must contain at least 25 synthetic education professionals
-    assert len(profiles) >= 25, f"Expected at least 25 profiles, got {len(profiles)}"
-    assert provider.get_total_count() >= 25
+    # Must contain exactly 30 synthetic benchmark records
+    assert len(profiles) == 30, f"Expected 30 profiles, got {len(profiles)}"
+    assert provider.get_total_count() == 30
 
-    # Check explicit labeling of all synthetic records
+    # Check explicit labeling of all synthetic records and non-real URLs
     for p in profiles:
         assert p.source_type == "SYNTHETIC TEST DATA"
+        assert "(Synthetic Profile)" in p.name
         assert "example.com" in p.linkedin_url
+        assert "linkedin.com" not in p.linkedin_url
         assert p.profile_id.startswith("SYN-")
 
 

@@ -75,12 +75,17 @@ class ScoringWeights(BaseModel):
         )
         if total <= 0:
             return ScoringWeights()
+        sem = round(self.semantic_similarity / total, 4)
+        eco = round(self.school_ecosystem / total, 4)
+        lead = round(self.leadership / total, 4)
+        multi = round(self.multi_school / total, 4)
+        skill = round(1.0 - (sem + eco + lead + multi), 4)
         return ScoringWeights(
-            semantic_similarity=round(self.semantic_similarity / total, 4),
-            school_ecosystem=round(self.school_ecosystem / total, 4),
-            leadership=round(self.leadership / total, 4),
-            multi_school=round(self.multi_school / total, 4),
-            skills_experience=round(self.skills_experience / total, 4),
+            semantic_similarity=sem,
+            school_ecosystem=eco,
+            leadership=lead,
+            multi_school=multi,
+            skills_experience=skill,
         )
 
 

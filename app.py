@@ -280,8 +280,9 @@ elif nav_choice == "2. Discover Profiles":
     preset_data = None
     if preset_cols[0].button("📋 Preset 1: Senior K-12 Consultant & Former Principal", use_container_width=True):
         preset_data = {
-            "name": "Dr. Sunita Sharma (Reference Test)",
-            "url": "https://example.com/profiles/reference-01",
+            "profile_id": "SYN-001",
+            "name": "Dr. Sunita Sharma (Reference Profile)",
+            "url": "https://example.com/profiles/syn-001",
             "role": "Senior Education Consultant & K-12 School Advisor",
             "org": "Independent Educational Advisory",
             "loc": "New Delhi, India",
@@ -292,8 +293,9 @@ elif nav_choice == "2. Discover Profiles":
         }
     elif preset_cols[1].button("🏛️ Preset 2: Managing Director & Multi-Campus Trustee", use_container_width=True):
         preset_data = {
-            "name": "Rajesh V. Patel (Reference Test)",
-            "url": "https://example.com/profiles/reference-02",
+            "profile_id": "SYN-002",
+            "name": "Rajesh V. Patel (Reference Profile)",
+            "url": "https://example.com/profiles/syn-002",
             "role": "Managing Director & Trustee",
             "org": "Vanguard Group of Schools",
             "loc": "Ahmedabad, Gujarat, India",
@@ -304,8 +306,9 @@ elif nav_choice == "2. Discover Profiles":
         }
     elif preset_cols[2].button("💡 Preset 3: Education Entrepreneur & Network Lead", use_container_width=True):
         preset_data = {
-            "name": "Meera Krishnan (Reference Test)",
-            "url": "https://example.com/profiles/reference-03",
+            "profile_id": "SYN-003",
+            "name": "Meera Krishnan (Reference Profile)",
+            "url": "https://example.com/profiles/syn-003",
             "role": "Founder & Chief Academic Officer",
             "org": "Auroville School Mentors Network",
             "loc": "Bengaluru, Karnataka, India",
@@ -322,11 +325,19 @@ elif nav_choice == "2. Discover Profiles":
         st.caption(
             "Note: Direct URL fetching requires configured enterprise APIs. Manual profile input is provided to maintain full user control without violating platform terms."
         )
-        url_input = st.text_input(
-            "Reference LinkedIn Profile URL (Optional / Placeholder)",
-            value=preset_data["url"] if preset_data else "https://example.com/profiles/reference-profile",
-            help="Synthetic placeholder or lawful public profile URL.",
-        )
+        u_col1, u_col2 = st.columns([2, 5])
+        with u_col1:
+            ref_pid = st.text_input(
+                "Reference Profile ID (Optional)",
+                value=preset_data.get("profile_id", "SYN-001") if preset_data else "SYN-001",
+                help="Stable profile ID (e.g. SYN-001) for deterministic self-exclusion.",
+            )
+        with u_col2:
+            url_input = st.text_input(
+                "Reference LinkedIn Profile URL (Optional / Placeholder)",
+                value=preset_data["url"] if preset_data else "https://example.com/profiles/syn-001",
+                help="Synthetic placeholder or lawful public profile URL.",
+            )
 
         f_col1, f_col2 = st.columns(2)
         with f_col1:
@@ -409,6 +420,7 @@ elif nav_choice == "2. Discover Profiles":
             with st.spinner("Analyzing reference profile and computing ML similarity ranking..."):
                 # Construct ReferenceProfile
                 ref_profile = ReferenceProfile(
+                    profile_id=ref_pid.strip() if ref_pid.strip() else None,
                     name=ref_name,
                     linkedin_url=url_input,
                     current_role=ref_role,

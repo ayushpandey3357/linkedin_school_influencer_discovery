@@ -166,43 +166,51 @@ Execute the automated test suite with full verbose output:
 python -m pytest -v
 ```
 
-### Verified Test Results
-```text
+### Verified Test Results (36/36 Passed)
+`	ext
 ============================= test session starts =============================
 platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0
-collected 28 items
+collected 36 items
 
-tests/test_analyzer.py::test_analyzer_derives_leadership_and_multi_school PASSED [  3%]
-tests/test_analyzer.py::test_analyzer_flags_missing_fields PASSED        [  7%]
-tests/test_analyzer.py::test_analyzer_control_profile_non_education PASSED [ 10%]
-tests/test_database.py::test_database_init_and_search_session_persistence PASSED [ 14%]
-tests/test_database.py::test_database_imported_profiles_persistence PASSED [ 17%]
-tests/test_explanations.py::test_explanation_generation_high_match PASSED [ 21%]
+tests/test_analyzer.py::test_analyzer_derives_leadership_and_multi_school PASSED [  2%]
+tests/test_analyzer.py::test_analyzer_flags_missing_fields PASSED        [  5%]
+tests/test_analyzer.py::test_analyzer_control_profile_non_education PASSED [  8%]
+tests/test_database.py::test_database_init_and_search_session_persistence PASSED [ 11%]
+tests/test_database.py::test_database_imported_profiles_persistence PASSED [ 13%]
+tests/test_database.py::test_two_independent_search_sessions_persistence PASSED [ 16%]
+tests/test_database.py::test_failed_search_does_not_corrupt_history PASSED [ 19%]
+tests/test_explanations.py::test_explanation_generation_high_match PASSED [ 22%]
 tests/test_explanations.py::test_explanation_generation_low_match PASSED [ 25%]
-tests/test_exporter.py::test_exporter_to_dataframe_and_csv_string PASSED [ 28%]
-tests/test_providers.py::test_synthetic_provider_loads_benchmark_dataset PASSED [ 32%]
-tests/test_providers.py::test_synthetic_provider_deduplication PASSED    [ 35%]
-tests/test_providers.py::test_synthetic_provider_filtering PASSED        [ 39%]
-tests/test_providers.py::test_csv_provider_loads_valid_csv PASSED        [ 42%]
-tests/test_providers.py::test_csv_provider_missing_required_column_raises_error PASSED [ 46%]
-tests/test_providers.py::test_csv_provider_deduplication PASSED          [ 50%]
-tests/test_providers.py::test_csv_provider_loads_sample_csv_file PASSED  [ 53%]
-tests/test_providers.py::test_authorized_connector_stub_behavior PASSED  [ 57%]
-tests/test_ranking.py::test_similarity_engine_tfidf_fallback PASSED      [ 60%]
-tests/test_ranking.py::test_weights_normalization PASSED                 [ 64%]
-tests/test_ranking.py::test_reference_profile_exclusion PASSED           [ 67%]
-tests/test_ranking.py::test_minimum_20_results_for_test_reference PASSED [ 71%]
-tests/test_ranking.py::test_score_normalization_and_ranges PASSED        [ 75%]
-tests/test_ranking.py::test_deterministic_ranking PASSED                 [ 78%]
-tests/test_ranking.py::test_ranking_discrimination_against_non_education_controls PASSED [ 82%]
-tests/test_schema.py::test_valid_candidate_profile PASSED                [ 85%]
-tests/test_schema.py::test_missing_required_fields_raises_validation_error PASSED [ 89%]
-tests/test_schema.py::test_missing_optional_fields_normalization PASSED  [ 92%]
-tests/test_schema.py::test_delimiter_parsing_for_indicators_and_skills PASSED [ 96%]
+tests/test_explanations.py::test_explanation_cites_factual_indicators_for_ecosystem_and_consulting PASSED [ 27%]
+tests/test_exporter.py::test_exporter_to_dataframe_and_csv_string PASSED [ 30%]
+tests/test_exporter.py::test_full_search_export_consistency PASSED       [ 33%]
+tests/test_providers.py::test_synthetic_provider_loads_benchmark_dataset PASSED [ 36%]
+tests/test_providers.py::test_synthetic_provider_deduplication PASSED    [ 38%]
+tests/test_providers.py::test_synthetic_provider_filtering PASSED        [ 41%]
+tests/test_csv_provider_loads_valid_csv PASSED        [ 44%]
+tests/test_csv_provider_missing_required_column_raises_error PASSED [ 47%]
+tests/test_csv_provider_deduplication PASSED          [ 50%]
+tests/test_csv_provider_loads_sample_csv_file PASSED  [ 52%]
+tests/test_providers.py::test_authorized_connector_stub_behavior PASSED  [ 55%]
+tests/test_ranking.py::test_similarity_engine_tfidf_fallback PASSED      [ 58%]
+tests/test_ranking.py::test_weights_normalization PASSED                 [ 61%]
+tests/test_ranking.py::test_reference_profile_exclusion_by_stable_id PASSED [ 63%]
+tests/test_ranking.py::test_reference_profile_exclusion_by_normalized_url PASSED [ 66%]
+tests/test_ranking.py::test_reference_profile_exclusion_by_conservative_multi_field PASSED [ 69%]
+tests/test_ranking.py::test_unrelated_person_with_same_name_is_not_excluded PASSED [ 72%]
+tests/test_ranking.py::test_dr_sunita_sharma_reference_search_returns_at_least_20_results_excluding_reference PASSED [ 75%]
+tests/test_ranking.py::test_total_relevance_score_formula_calculation PASSED [ 77%]
+tests/test_ranking.py::test_score_normalization_and_ranges PASSED        [ 80%]
+tests/test_ranking.py::test_deterministic_ranking PASSED                 [ 83%]
+tests/test_ranking.py::test_ranking_discrimination_against_non_education_controls PASSED [ 86%]
+tests/test_schema.py::test_valid_candidate_profile PASSED                [ 88%]
+tests/test_schema.py::test_missing_required_fields_raises_validation_error PASSED [ 91%]
+tests/test_schema.py::test_missing_optional_fields_normalization PASSED  [ 94%]
+tests/test_schema.py::test_delimiter_parsing_for_indicators_and_skills PASSED [ 97%]
 tests/test_schema.py::test_experience_years_parsing PASSED               [100%]
 
-============================= 28 passed in 23.82s =============================
-```
+============================= 36 passed in 4.25s ==============================
+`
 
 ---
 
@@ -240,17 +248,38 @@ Experience: 24.0 years.
   $$S_{\text{sem}} = \max(0, \min(100, \cos(\vec{r}, \vec{c}_i) \times 100))$$
 
 ### 3. Multi-Component Weighted Ranking Formula
-$$R = w_{\text{sem}} \cdot S_{\text{sem}} + w_{\text{eco}} \cdot S_{\text{eco}} + w_{\text{lead}} \cdot S_{\text{lead}} + w_{\text{multi}} \cdot S_{\text{multi}} + w_{\text{skill}} \cdot S_{\text{skill}}$$
+Total relevance score is deterministically calculated as the dot product of normalized component weights and component scores:
 
-| Component | Default Weight | Description |
-| :--- | :---: | :--- |
-| **Semantic Similarity** ($S_{\text{sem}}$) | **40%** | Contextual NLP similarity across roles, summaries, and achievements |
-| **School Ecosystem** ($S_{\text{eco}}$) | **25%** | Presence of K-12 keywords, boards (CBSE, ICSE, IB, Cambridge), school trusts |
-| **Leadership Relevance** ($S_{\text{lead}}$) | **15%** | Executive decision-maker indicators (Principal, Trustee, Director, Founder) |
-| **Multi-School Reach** ($S_{\text{multi}}$) | **15%** | Evidence of advising multiple schools, managing school networks or clusters |
-| **Skills & Experience** ($S_{\text{skill}}$) | **5%** | Jaccard overlap of domain competencies and tenure alignment |
+\\text{Total Relevance Score} = \\sum_{k \\in \\mathcal{K}} w_k \\cdot S_k = w_{\\text{sem}} \\cdot S_{\\text{sem}} + w_{\\text{eco}} \\cdot S_{\\text{eco}} + w_{\\text{lead}} \\cdot S_{\\text{lead}} + w_{\\text{multi}} \\cdot S_{\\text{multi}} + w_{\\text{skill}} \\cdot S_{\\text{skill}}
 
-*Reference Profile Exclusion*: If a candidate matches the reference profile (by ID or normalized URL), it is automatically excluded from recommendations.
+Where $\\sum_{k} w_k = 1.0$ (100%).
+
+| Component | Default Weight | Range | Description |
+| :--- | :---: | :---: | :--- |
+| **Semantic Similarity** ({\\text{sem}}$) | **40%** | 0 - 100 | Contextual NLP cosine similarity across unified profile text representation |
+| **School Ecosystem** ({\\text{eco}}$) | **25%** | 0 - 100 | Evidence of CBSE/ICSE/IB boards, curriculum, accreditation, school trusts |
+| **Leadership Relevance** ({\\text{lead}}$) | **15%** | 0 - 100 | Decision-maker indicators (Principal, Headmistress, Trustee, Director, Founder) |
+| **Multi-School Reach** ({\\text{multi}}$) | **15%** | 0 - 100 | Multi-campus, cluster, network, turnaround, or advisory scale |
+| **Skills & Experience** ({\\text{skill}}$) | **5%** | 0 - 100 | Domain competencies Jaccard overlap and career tenure alignment |
+
+- **Weight Validation**: Weights are validated to ensure they sum to exactly 100% ($\\pm 10^{-4}$). The normalization function guarantees zero remainder drift.
+- **Deterministic Output**: For identical reference and candidate inputs, scores and rank orderings are 100% deterministic (ties broken by alphabetical profile_id).
+
+### 4. Reference Profile Exclusion Hierarchy
+
+To ensure a reference professional is never recommended to themselves:
+1. **Level 1 — Stable Profile ID**: If profile_id is supplied (e.g. SYN-001), candidate matching this ID is immediately excluded.
+2. **Level 2 — Normalized Profile URL**: Both URLs are stripped of protocol (http://, https://), www., tracking parameters (?trk=...), fragments (#...), and trailing slashes. Non-generic canonical paths matching each other are excluded.
+3. **Level 3 — Conservative Multi-Field Duplicate Check**: If neither stable ID nor specific URL is available:
+   - Base names are cleaned (stripping honorifics like Dr. and parenthetical qualifiers like (Reference Profile)).
+   - Candidate is **NEVER** excluded on name similarity alone.
+   - Requires base name match **AND** concordant verification across multiple independent fields:
+     - Role concordance (normalized title match or high lexical overlap)
+     - Organization concordance (both non-empty and matching)
+     - Location concordance (shared city / state)
+     - Experience tenure concordance ($|\\Delta \\text{exp}| \\le 1.0\\text{ year}$)
+     - Summary text / indicators high lexical overlap
+   - **Limitations**: If two distinct individuals coincidentally share the exact same name, organization, and role/tenure, the conservative check treats them as duplicates. Conversely, if an individual's title is drastically altered without shared ID or URL, conservative matching will not exclude them to prevent false suppression.
 
 ---
 
