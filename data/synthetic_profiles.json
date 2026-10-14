@@ -1,0 +1,623 @@
+[
+  {
+    "profile_id": "SYN-001",
+    "name": "Dr. Sunita Sharma (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-001",
+    "current_role": "Senior Education Consultant & K-12 School Advisor",
+    "organization": "Independent Educational Advisory",
+    "location": "New Delhi, India",
+    "professional_summary": "Former CBSE Senior Principal with 24 years in K-12 school education. Now advising school trusts, founding boards, and directors on school turnaround, teacher development, CBSE/NEP curriculum alignment, and institutional governance across 15+ private schools.",
+    "experience_years": 24,
+    "school_ecosystem_indicators": [
+      "Former Principal of 2 flagship CBSE schools (1,800+ students)",
+      "Advisory board member for 4 school trusts",
+      "Consultant to 15+ K-12 schools across Northern India",
+      "Keynote speaker at National Principals Conclave",
+      "NEP 2020 pedagogical integration specialist"
+    ],
+    "skills": ["School Turnaround", "Curriculum Strategy", "CBSE Affiliation", "Teacher Training", "School Governance", "K-12 Leadership"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-002",
+    "name": "Rajesh V. Patel (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-002",
+    "current_role": "Managing Director & Trustee",
+    "organization": "Vanguard Group of Schools",
+    "location": "Ahmedabad, Gujarat, India",
+    "professional_summary": "Trustee and Managing Director overseeing 8 premier K-12 campuses with over 12,000 students. Active networker with state education boards, school owner associations, and educational philanthropists. Focus on technology-enabled classrooms and multi-campus standardisation.",
+    "experience_years": 20,
+    "school_ecosystem_indicators": [
+      "Managing Trustee overseeing 8 K-12 schools",
+      "Executive Committee Member, State Independent Schools Association",
+      "Direct relationships with 50+ school owners and promoters",
+      "Investor and advisor to school management systems and EdTech",
+      "Multi-campus infrastructure and finance planner"
+    ],
+    "skills": ["School Network Management", "Trustee Governance", "Multi-school Operations", "K-12 Expansion", "Budgeting", "School Promoters Network"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-003",
+    "name": "Meera Krishnan (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-003",
+    "current_role": "Founder & Chief Academic Officer",
+    "organization": "Auroville School Mentors Network",
+    "location": "Bengaluru, Karnataka, India",
+    "professional_summary": "Education entrepreneur and former ICSE School Headmistress. Founded an educational consultancy that trains academic coordinators and designs STEM/experiential learning curricula for 30+ affiliated schools across South India.",
+    "experience_years": 18,
+    "school_ecosystem_indicators": [
+      "Former Headmistress at Bishop Cotton Girls School",
+      "Founded K-12 academic consultancy servicing 30+ schools",
+      "Regular mentor to aspiring school principals",
+      "Lead curriculum architect for ICSE and Cambridge primary programs",
+      "Organizer of Annual School Leadership Summit"
+    ],
+    "skills": ["Pedagogical Leadership", "Multi-school Curriculum", "ICSE & Cambridge Alignment", "Teacher Mentorship", "Education Entrepreneurship"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-004",
+    "name": "Col. Vikramjit Sengupta (Retd.) (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-004",
+    "current_role": "Director of Administration & School Governance",
+    "organization": "Heritage Valley Residential Schools",
+    "location": "Dehradun, Uttarakhand, India",
+    "professional_summary": "Former Director of Army Public Schools and boarding school administrator with 16 years leading large-scale boarding school operations. Expert in student safety, residential boarding administration, and regulatory compliances.",
+    "experience_years": 16,
+    "school_ecosystem_indicators": [
+      "Former Director of 3 premier residential boarding schools",
+      "Member of Association of Boarding Schools of India",
+      "Consults school boards on campus safety, POCSO compliance, and estate management",
+      "Network of 40+ boarding school principals"
+    ],
+    "skills": ["School Administration", "Boarding School Operations", "Regulatory Compliance", "Student Pastoral Care", "Crisis Management"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-005",
+    "name": "Dr. Farhana Qureshi (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-005",
+    "current_role": "Former Principal & IB World School Consultant",
+    "organization": "Global Horizons Education",
+    "location": "Mumbai, Maharashtra, India",
+    "professional_summary": "Former IB DP Coordinator and Principal at an International Baccalaureate World School in Mumbai. 21 years of experience in IB/IGCSE pedagogy, teacher evaluation, authorization visits, and school accreditation.",
+    "experience_years": 21,
+    "school_ecosystem_indicators": [
+      "Former IB School Principal for 9 years",
+      "IB Workshop Leader & Site Visiting Team Leader",
+      "Advised 12 international schools across Western India on IB PYP/MYP/DP accreditation",
+      "Frequent panellist on global school leadership webinars"
+    ],
+    "skills": ["IB Authorization", "International School Leadership", "IGCSE Pedagogy", "Accreditation", "Teacher Appraisal"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-006",
+    "name": "Anand S. Murthy (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-006",
+    "current_role": "Head of Institutional Alliances & School Partnerships",
+    "organization": "NextGen K-12 Solutions",
+    "location": "Hyderabad, Telangana, India",
+    "professional_summary": "Former vice principal turned education leader. 15 years driving institutional engagement with private school managements, managing trusts, and principals across 200+ budget and premium private schools.",
+    "experience_years": 15,
+    "school_ecosystem_indicators": [
+      "Former Vice Principal at St. Andrews School",
+      "Direct relationships with 200+ school principals and correspondents",
+      "Spearheaded enterprise tech adoption across 60 school groups",
+      "Author of whitepapers on private school economics in India"
+    ],
+    "skills": ["School Partnerships", "Principal Relations", "EdTech Adoption", "Institutional Sales", "K-12 Market Strategy"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-007",
+    "name": "Pooja Roy Chowdhury (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-007",
+    "current_role": "Founding Principal & K-12 Academic Auditor",
+    "organization": "Apex Academy & Independent Consultancy",
+    "location": "Kolkata, West Bengal, India",
+    "professional_summary": "Founding Principal who built a CBSE senior secondary school from inception to 2,200 students. Currently serves as an independent academic auditor reviewing pedagogical standards for school trust chains in Eastern India.",
+    "experience_years": 19,
+    "school_ecosystem_indicators": [
+      "Founding Principal of Apex Academy (CBSE)",
+      "Conducted academic audits for 22 schools across Bengal and Odisha",
+      "Resource person for CBSE Capacity Building Programmes",
+      "Mentor to first-time school founders"
+    ],
+    "skills": ["Academic Audit", "School Inception", "CBSE Affiliation", "Pedagogical Auditing", "Principal Coaching"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-008",
+    "name": "Sanjay B. Mittal (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-008",
+    "current_role": "School Owner & General Secretary",
+    "organization": "Delhi Progressive Schools Consortium",
+    "location": "Noida, Uttar Pradesh, India",
+    "professional_summary": "Owner and Trustee of 3 senior secondary schools in NCR. General Secretary of the Progressive Schools Consortium, representing 80+ school managements in dialogue with regulatory bodies and state education departments.",
+    "experience_years": 22,
+    "school_ecosystem_indicators": [
+      "Owner/Promoter of 3 private CBSE schools",
+      "General Secretary of Progressive Schools Consortium (80+ schools)",
+      "Convenor of Delhi-NCR School Owners Forum",
+      "Extensive policy advocacy and legal compliance experience for private schools"
+    ],
+    "skills": ["School Ownership", "Trustee Governance", "Policy Advocacy", "Consortium Leadership", "Regulatory Relations"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-009",
+    "name": "Kavita Nambiar (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-009",
+    "current_role": "Cluster Academic Director (18 Campuses)",
+    "organization": "Oakridge Educational Society",
+    "location": "Chennai, Tamil Nadu, India",
+    "professional_summary": "Cluster Academic Director responsible for curriculum implementation, teacher appraisal, and board exam results across 18 schools in Tamil Nadu and Kerala. Former Cambridge IGCSE Coordinator and Principal.",
+    "experience_years": 17,
+    "school_ecosystem_indicators": [
+      "Oversees academic quality for 18 campuses",
+      "Trained 1,200+ K-12 teachers in experiential pedagogies",
+      "Former Principal of Oakridge International Chennai",
+      "Key adviser on regional ICSE/CBSE dual curriculum strategies"
+    ],
+    "skills": ["Multi-campus Academic Management", "Teacher Professional Development", "Cambridge Curriculum", "Assessment Frameworks"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-010",
+    "name": "Deepak Khurana (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-010",
+    "current_role": "Education Entrepreneur & Founder",
+    "organization": "PrincipalCircle.in",
+    "location": "Gurugram, Haryana, India",
+    "professional_summary": "Former Dean of Academics at DPS Society school. Founded PrincipalCircle, a peer-networking and professional development community for over 450 K-12 school principals across India.",
+    "experience_years": 14,
+    "school_ecosystem_indicators": [
+      "Built a professional network of 450+ active school principals",
+      "Former Dean of Academics at DPS",
+      "Hosted 35+ national roundtables on K-12 school leadership",
+      "Consultant to education publishers and school hardware vendors"
+    ],
+    "skills": ["Principal Community Building", "K-12 Networking", "Leadership Roundtables", "EdTech Strategy", "Curriculum Design"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-011",
+    "name": "Sister Maria Therese (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-011",
+    "current_role": "Provincial Education Councillor & Former Principal",
+    "organization": "St. Joseph's Convent Educational Trust",
+    "location": "Kochi, Kerala, India",
+    "professional_summary": "Senior educational administrator overseeing 14 mission schools and junior colleges in Southern India. 28 years of service as teacher, principal, and provincial education coordinator for minority institutions.",
+    "experience_years": 28,
+    "school_ecosystem_indicators": [
+      "Provincial Councillor overseeing 14 educational institutions",
+      "Former Principal of St. Joseph's Higher Secondary School (22 years)",
+      "State-level committee member on value education and inclusive schooling",
+      "Trusted advisor to Christian minority school trusts"
+    ],
+    "skills": ["Educational Governance", "Institutional Integrity", "Value Education", "Inclusive Schooling", "Community Relations"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-012",
+    "name": "Dr. Bhaskar Banerjee (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-012",
+    "current_role": "K-12 Accreditation & Inspection Consultant",
+    "organization": "Quality In Education Advisors",
+    "location": "Pune, Maharashtra, India",
+    "professional_summary": "Former CBSE Regional Inspection Committee Member and retired Principal with 26 years in educational administration. Provides comprehensive pre-affiliation mock inspections, safety audits, and academic quality bench-marking for new and expanding schools.",
+    "experience_years": 26,
+    "school_ecosystem_indicators": [
+      "Former member of CBSE School Inspection Panels",
+      "Conducted 50+ formal and mock school inspections",
+      "Retired Principal of Army Public School Pune",
+      "Author of 'Operational Benchmarks for Modern Indian Schools'"
+    ],
+    "skills": ["CBSE Affiliation Inspections", "Quality Benchmarking", "Statutory Compliances", "School Infrastructure Planning"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-013",
+    "name": "Gaurav Chhabra (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-013",
+    "current_role": "VP - School Network Operations",
+    "organization": "Universal Learn Today / Vasant Valley Group",
+    "location": "New Delhi, India",
+    "professional_summary": "Senior operations executive managing school systems, enterprise technology, and vendor contracts for a top-tier network of 10 private schools. Deep connections with school administrative heads, finance controllers, and suppliers.",
+    "experience_years": 13,
+    "school_ecosystem_indicators": [
+      "Manages operations for 10 premier K-12 campuses",
+      "Procurement and vendor relationship lead for 25,000 students",
+      "Speaker on sustainable school campus management",
+      "Advises school trusts on cost optimization and facility management"
+    ],
+    "skills": ["School Operations", "Facility Management", "Procurement Strategy", "ERP Implementation", "Vendor Negotiation"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-014",
+    "name": "Shalini Swaminathan (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-014",
+    "current_role": "Early Childhood & Pre-Primary School Consultant",
+    "organization": "Little Sprouts Early Learning Consortium",
+    "location": "Bengaluru, Karnataka, India",
+    "professional_summary": "Montessori trainer and advisor to 40+ preschools and K-12 junior wings. Specialist in early literacy, play-based foundational stage curriculum (NEP NIPUN Bharat), and preschool-to-primary transition frameworks.",
+    "experience_years": 16,
+    "school_ecosystem_indicators": [
+      "Consultant to 40+ standalone preschools and K-12 junior wings",
+      "Designed foundational stage curriculums for 3 school chains",
+      "Trainer for Early Childhood Association (ECA) chapters",
+      "Direct advisor to preschool franchisees and school owners"
+    ],
+    "skills": ["Early Childhood Education", "Foundational Stage NEP", "Montessori Pedagogy", "Preschool Curriculum", "Teacher Coaching"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-015",
+    "name": "Tariq Ahmad Mir (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-015",
+    "current_role": "Director of Academics & Former Principal",
+    "organization": "Himalayan Model Schools Society",
+    "location": "Srinagar, Jammu & Kashmir, India",
+    "professional_summary": "Former Principal of Delhi Modern Public School Srinagar with 23 years in hilly terrain school operations. Currently oversees pedagogical strategy and remote learning continuity for 9 schools in high-altitude regions.",
+    "experience_years": 23,
+    "school_ecosystem_indicators": [
+      "Former Principal for 16 years across 2 senior secondary schools",
+      "Oversees 9 community schools in Northern regions",
+      "Pioneer in hybrid and winter-school instructional modules",
+      "Recipient of State Best Teacher Award"
+    ],
+    "skills": ["School Administration", "Remote Learning", "Community Engagement", "Board Exam Preparation", "Teacher Retention"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-016",
+    "name": "Nandini R. Joshi (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-016",
+    "current_role": "Advisor - School Mental Health & Pastoral Care",
+    "organization": "NurtureMind Education Trust",
+    "location": "Mumbai, Maharashtra, India",
+    "professional_summary": "Child psychologist and school mental wellness consultant advising 25+ private CBSE and ICSE schools on counseling centers, anti-bullying protocols, emotional wellbeing curriculum, and special educator onboarding.",
+    "experience_years": 15,
+    "school_ecosystem_indicators": [
+      "Advises counseling departments across 25+ K-12 schools",
+      "Formulated POCSO and anti-bullying guidelines for 4 school trusts",
+      "Frequent workshop facilitator for school leadership teams",
+      "Advisor on inclusive education and CBSE concessions"
+    ],
+    "skills": ["School Mental Health", "Pastoral Care", "POCSO Compliance", "Inclusive Education", "Principal Advisory"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-017",
+    "name": "Amitava Roy (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-017",
+    "current_role": "Managing Director & Co-Founder",
+    "organization": "LeadPath Eduservices",
+    "location": "Chandigarh, India",
+    "professional_summary": "Former DAV School Vice Principal who launched LeadPath to provide turnkey management, school promoter advisory, and principal placement services for greenfield K-12 school projects in North India.",
+    "experience_years": 18,
+    "school_ecosystem_indicators": [
+      "Led setup of 7 greenfield CBSE schools from land-to-launch",
+      "Placed 40+ principals and vice principals in private schools",
+      "Consultant to real estate developers launching educational wings",
+      "Direct advisory relations with 30+ school promoter families"
+    ],
+    "skills": ["Greenfield School Setup", "Leadership Search", "Promoter Advisory", "CBSE Affiliation", "Feasibility Studies"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-018",
+    "name": "Dr. Usha K. Venkataraman (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-018",
+    "current_role": "Senior Consultant - School Leadership Development",
+    "organization": "Centre for Excellence in Schooling",
+    "location": "Chennai, Tamil Nadu, India",
+    "professional_summary": "Retired Principal of National Public School with 30 years in K-12 education. Specializes in mentoring mid-career teachers to take on Vice-Principal and Principal positions, and advising school trustees on succession planning.",
+    "experience_years": 30,
+    "school_ecosystem_indicators": [
+      "30 years in K-12 schools; 14 years as Principal",
+      "Mentored 60+ current school principals and vice principals",
+      "Conducted 100+ school leadership masterclasses",
+      "Advisor to educational philanthropic foundations"
+    ],
+    "skills": ["School Leadership Mentorship", "Succession Planning", "Teacher Evaluation", "Institutional Ethics", "Principal Coaching"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-019",
+    "name": "Vikram Sethi (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-019",
+    "current_role": "Director - Strategic Growth & School Network",
+    "organization": "EuroSchool & Billabong High Network",
+    "location": "Mumbai, Maharashtra, India",
+    "professional_summary": "Network growth executive leading franchise partnerships, school acquisitions, and brand conversions for large private K-12 chains. In-depth understanding of school promoters, trust agreements, and educational real estate.",
+    "experience_years": 16,
+    "school_ecosystem_indicators": [
+      "Led acquisition and brand integration of 12 private schools",
+      "Network of 80+ school owners across Tier-1 and Tier-2 cities",
+      "Deep expertise in school franchising and management contracts",
+      "Speaker on K-12 expansion economics"
+    ],
+    "skills": ["School M&A", "Franchise Partnerships", "Network Expansion", "Trust Governance", "Promoter Engagement"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-020",
+    "name": "Preeti Aggarwal (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-020",
+    "current_role": "Curriculum Consultant & Former Head of Senior School",
+    "organization": "TransformK12 Consulting",
+    "location": "Jaipur, Rajasthan, India",
+    "professional_summary": "Former Head of Senior School at Mayo College Girls School. Now consults heritage and modern CBSE/CISCE schools on competency-based assessment design, board exam strategies, and interdisciplinary project learning.",
+    "experience_years": 20,
+    "school_ecosystem_indicators": [
+      "Former Head of Senior School at top boarding school",
+      "Advised 18 private schools in Rajasthan and MP",
+      "Master trainer for CISCE assessment reforms",
+      "Strong network among residential school principals"
+    ],
+    "skills": ["Competency Based Education", "CISCE Curriculum", "Board Exam Strategy", "Senior School Leadership", "Faculty Development"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-021",
+    "name": "Harishankar N. Rao (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-021",
+    "current_role": "Trustee & Secretary",
+    "organization": "Saraswati Vidya Mandir Educational Trust",
+    "location": "Bengaluru, Karnataka, India",
+    "professional_summary": "Trustee of 6 affordable private schools catering to 7,500 children from semi-urban backgrounds. Active advocate for state fee regulation reforms, RTE reimbursements, and equitable school education funding.",
+    "experience_years": 22,
+    "school_ecosystem_indicators": [
+      "Managing Trustee of 6 affordable private schools",
+      "State Representative, National Independent Schools Alliance (NISA)",
+      "Direct connect with 150+ budget school owners",
+      "Pioneer in blended learning for budget schools"
+    ],
+    "skills": ["Budget Private Schools", "Trustee Governance", "RTE Advocacy", "Affordable School Models", "Regulatory Affairs"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-022",
+    "name": "Madhavi Sen (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-022",
+    "current_role": "Head of School Alliances & Outreach",
+    "organization": "Edutech India Collaborative",
+    "location": "New Delhi, India",
+    "professional_summary": "12 years working directly with school principals, vice principals, and computer department heads to integrate coding, AI, and robotics programs into mainstream K-12 curricula across 120+ schools.",
+    "experience_years": 12,
+    "school_ecosystem_indicators": [
+      "Partnered with 120+ CBSE/ICSE school managements",
+      "Organized national inter-school science and innovation expos",
+      "Advises school principals on ATAL Tinkering Labs setup",
+      "Deep connect with STEM educators and school decision-makers"
+    ],
+    "skills": ["STEM in Schools", "School Alliances", "Atal Tinkering Labs", "Principal Engagement", "Vendor Partnerships"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-023",
+    "name": "Rohan Deshmukh (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-023",
+    "current_role": "Education Architect & School Campus Planner",
+    "organization": "Spaces For Learning Consultants",
+    "location": "Pune, Maharashtra, India",
+    "professional_summary": "Architectural and pedagogical space planner designing innovative learning spaces, maker-spaces, and campus layouts for over 35 K-12 schools across India. Works closely with school trustees, directors, and principals.",
+    "experience_years": 15,
+    "school_ecosystem_indicators": [
+      "Designed campuses for 35+ greenfield and brownfield K-12 schools",
+      "Consultant to school boards on sustainable school buildings and safety",
+      "Co-authored Indian Council for School Architecture guidelines",
+      "Keynote speaker at National Education Infrastructure Summit"
+    ],
+    "skills": ["School Campus Design", "Pedagogical Spaces", "Trustee Advisory", "Infrastructure Standards", "Green Schools"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-024",
+    "name": "Geeta Ramanathan (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-024",
+    "current_role": "Senior Consultant - School Quality Assessment",
+    "organization": "National School Accreditation Support Group",
+    "location": "Kochi, Kerala, India",
+    "professional_summary": "Former Principal of Kendriya Vidyalaya with 27 years in government and semi-government school ecosystems. Certified NABET school accreditation assessor who has evaluated over 45 schools nationwide.",
+    "experience_years": 27,
+    "school_ecosystem_indicators": [
+      "Retired Kendriya Vidyalaya Principal (15 years)",
+      "NABET Lead Assessor for 45+ schools across India",
+      "Resource person for NCERT and CBSE state cells",
+      "Expert on institutional self-evaluation frameworks"
+    ],
+    "skills": ["NABET Accreditation", "School Quality Assessment", "Kendriya Vidyalaya System", "NCERT Frameworks", "Principal Mentorship"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-025",
+    "name": "Karthik Subrahmanian (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-025",
+    "current_role": "Chief Operating Officer & Former Academic Director",
+    "organization": "Indus Valley International Schools Chain",
+    "location": "Hyderabad, Telangana, India",
+    "professional_summary": "COO managing academic strategy, board relations, and 5 multi-disciplinary campuses with 9,000 students. Former Cambridge School Principal with deep experience in school expansion and multi-school leadership.",
+    "experience_years": 21,
+    "school_ecosystem_indicators": [
+      "COO managing 5 international school campuses",
+      "Former Cambridge School Principal",
+      "Board representative on 3 school charitable trusts",
+      "Frequent advisor to international school leadership consortiums"
+    ],
+    "skills": ["Multi-school Leadership", "Cambridge Pedagogy", "Board Governance", "Operations Strategy", "Academic Leadership"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-026",
+    "name": "Alok Verma (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-026",
+    "current_role": "Former Principal & K-12 STEM Advisor",
+    "organization": "InnovateEdu Mentors",
+    "location": "Lucknow, Uttar Pradesh, India",
+    "professional_summary": "Former Principal of City Montessori School campus with 22 years of school teaching and administration. Mentors schools on setting up robotics labs, mathematics clubs, and science exhibition frameworks.",
+    "experience_years": 22,
+    "school_ecosystem_indicators": [
+      "Former Principal at CMS Lucknow (8 years)",
+      "Advised 16 schools across UP and Bihar on STEM adoption",
+      "Author of 'Experiential Science in K-12 Classrooms'",
+      "Regular mentor for national science talent search"
+    ],
+    "skills": ["STEM Education", "School Administration", "Teacher Coaching", "Science Curriculum", "Principal Advisory"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-027",
+    "name": "Devika N. Pillai (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-027",
+    "current_role": "Senior Cloud Software Architect",
+    "organization": "Fintech Global Systems",
+    "location": "Bengaluru, Karnataka, India",
+    "professional_summary": "Senior cloud backend engineer working on high-throughput payment gateways, microservices architecture, and distributed databases in Kubernetes. No education sector or school ecosystem background.",
+    "experience_years": 11,
+    "school_ecosystem_indicators": [
+      "Not specified"
+    ],
+    "skills": ["Java", "Kubernetes", "Microservices", "Payment Gateways", "AWS", "Distributed Systems"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation (Control Profile - Non-Education)",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-028",
+    "name": "Siddharth Malhotra (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-028",
+    "current_role": "Regional Retail Store Operations Manager",
+    "organization": "Metro Lifestyle Stores",
+    "location": "Mumbai, Maharashtra, India",
+    "professional_summary": "Regional manager overseeing inventory, supply chain, and retail sales across 14 apparel outlets in Western India. Strong commercial retail experience; unrelated to educational leadership.",
+    "experience_years": 14,
+    "school_ecosystem_indicators": [
+      "Not specified"
+    ],
+    "skills": ["Retail Operations", "Visual Merchandising", "Inventory Control", "Store Staff Management", "Apparel Sales"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation (Control Profile - Non-Education)",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-029",
+    "name": "Tanvi Agarwal (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-029",
+    "current_role": "Corporate Financial Analyst",
+    "organization": "Apex Capital & Advisory",
+    "location": "Gurugram, Haryana, India",
+    "professional_summary": "Financial analyst building discounted cash flow models, debt refinancing analyses, and corporate quarterly valuation presentations for manufacturing clients.",
+    "experience_years": 8,
+    "school_ecosystem_indicators": [
+      "Not specified"
+    ],
+    "skills": ["Financial Modeling", "Corporate Valuation", "DCF Analysis", "Excel Modeling", "Accounting"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation (Control Profile - Non-Education)",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  },
+  {
+    "profile_id": "SYN-030",
+    "name": "Dr. Pradeep Nair (Synthetic Profile)",
+    "linkedin_url": "https://example.com/profiles/syn-030",
+    "current_role": "Associate Professor of Mechanical Engineering",
+    "organization": "National Institute of Advanced Technology",
+    "location": "Chennai, Tamil Nadu, India",
+    "professional_summary": "University academic researcher specializing in computational fluid dynamics and thermodynamics. Supervises PhD dissertations in tertiary engineering; has no K-12 or school administration background.",
+    "experience_years": 17,
+    "school_ecosystem_indicators": [
+      "Not specified"
+    ],
+    "skills": ["Thermodynamics", "Computational Fluid Dynamics", "University Research", "PhD Supervision", "Engineering Publications"],
+    "source_type": "SYNTHETIC TEST DATA",
+    "source_description": "Synthetic profile generated for automated testing and algorithm evaluation (Control Profile - Non-K12 Education)",
+    "source_url": "https://example.com/dataset/synthetic_v1",
+    "last_verified_at": "2026-10-14"
+  }
+]
