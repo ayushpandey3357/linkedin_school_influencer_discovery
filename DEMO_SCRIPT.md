@@ -10,7 +10,7 @@
 - [x] Python 3.11+ installed.
 - [x] Terminal open in project directory: `c:\Users\ayush\OneDrive\Desktop\linkedin_school_influencer_discovery`.
 - [x] Dependencies installed: `pip install -r requirements.txt`.
-- [x] Automated tests verified: `python -m pytest -v` (28/28 tests passing).
+- [x] Automated tests verified: `python -m pytest -v` (36/36 tests passing).
 - [x] Application started: `streamlit run app.py` (or `python run.py`).
 
 ---
@@ -110,7 +110,7 @@
    ```powershell
    python -m pytest -v
    ```
-   - Show that **all 28 automated tests pass in ~3-4 seconds**, verifying:
+   - Show that **all 36 automated tests pass in ~3-4 seconds**, verifying:
      - Schema validation
      - Delimiter parsing
      - Exclusion of reference profile
@@ -136,5 +136,5 @@
 | **Interactive Streamlit UI** | **Implemented** | Multi-tab dashboard with Plotly charts, candidate cards, radar plots, and responsive CSS. |
 | **Persistent SQLite Storage** | **Implemented** | Sessions, candidate scores, and imported profiles stored via parameterized SQL. |
 | **CSV Export Engine** | **Implemented** | Full data serialization with provenance metadata and component breakdowns. |
-| **Automated Pytest Suite** | **Implemented** | 28 automated unit and integration tests; all 28 passing. |
+| **Automated Pytest Suite** | **Implemented** | 36 automated unit and integration tests; all 36 passing. |
 | **Production Cloud Deployment** | **Ready** | Pinned dependencies in `requirements.txt` and `.streamlit/config.toml` for Streamlit Cloud. |
