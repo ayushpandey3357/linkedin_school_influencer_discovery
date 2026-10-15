@@ -5,6 +5,8 @@
 
 ---
 
+# Live Demo - https://linkedin-school-influencer-discovery.onrender.com
+
 ## 1. Problem Statement
 
 Identifying key influencers and institutional decision-makers within the school education ecosystem is a vital challenge for EdTech initiatives, school trusts, and curriculum providers. Standard LinkedIn search often yields either surface-level keyword hits or fails to identify professionals whose influence spans multiple schools (e.g., former principals turned advisors, multi-campus trustees, education entrepreneurs, and accreditation specialists).
