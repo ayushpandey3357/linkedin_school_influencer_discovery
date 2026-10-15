@@ -55,6 +55,11 @@ class ScoringWeights(BaseModel):
         description="Weight for domain skills and experience depth (0-1)",
     )
 
+    @classmethod
+    def default(cls) -> "ScoringWeights":
+        """Returns a default ScoringWeights instance."""
+        return cls()
+
     def validate_weights(self) -> bool:
         total = (
             self.semantic_similarity

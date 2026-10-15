@@ -578,7 +578,7 @@ elif nav_choice == "2. Discover Profiles":
                     school_ecosystem_indicators="Former Principal of 2 flagship CBSE schools; Advisory board member for 4 school trusts; Consultant to 15+ K-12 schools; NEP 2020 pedagogical integration specialist",
                     skills="School Turnaround; Curriculum Strategy; CBSE Affiliation; Teacher Training; School Governance; K-12 Leadership",
                 )
-                demo_weights = ScoringWeights.default()
+                demo_weights = ScoringWeights()
                 demo_results = execute_discovery(demo_ref, demo_weights, min_score=20.0, top_k=25)
                 st.success(
                     f"🎉 **Evaluation Complete!** Discovered and ranked **{len(demo_results)}** candidates. "
