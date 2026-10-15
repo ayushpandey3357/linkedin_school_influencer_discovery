@@ -5,6 +5,7 @@ former principals, school owners, trustees, and K-12 advisors.
 """
 
 import json
+import urllib.parse
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 import pandas as pd
@@ -24,6 +25,20 @@ from app.providers import (
     SyntheticDatasetProvider,
 )
 from app.ranking import RankingEngine, SimilarityEngine
+
+
+def get_profile_url(p: Any) -> str:
+    """Returns a valid, clickable profile or search URL.
+    For synthetic test records (which use example.com domain), generates a real live LinkedIn search URL.
+    For imported/live records, returns the actual profile URL."""
+    url = getattr(p, "linkedin_url", "") or ""
+    if url and "example.com" not in url:
+        return url
+    clean_name = getattr(p, "name", "").replace("(Synthetic Profile)", "").replace("(Reference Profile)", "").strip()
+    role = getattr(p, "current_role", "") or ""
+    query = f"{clean_name} {role}".strip()
+    return f"https://www.linkedin.com/search/results/all/?keywords={urllib.parse.quote(query)}"
+
 
 # Set Page Config
 st.set_page_config(
@@ -883,58 +898,43 @@ elif nav_choice == "3. Ranked Results":
 
             # Mini score indicators
             cs = cand.component_scores
-            score_bar_html = f"""
-            <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; font-size: 0.72rem; color: #64748B;">
-                <div>
-                    <div>Semantic: <strong>{cs.semantic_similarity:.0f}</strong></div>
-                    <div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #3B82F6; height: 100%; width: {min(100, cs.semantic_similarity)}%; border-radius: 2px;"></div></div>
-                </div>
-                <div>
-                    <div>Ecosystem: <strong>{cs.school_ecosystem:.0f}</strong></div>
-                    <div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #10B981; height: 100%; width: {min(100, cs.school_ecosystem)}%; border-radius: 2px;"></div></div>
-                </div>
-                <div>
-                    <div>Leadership: <strong>{cs.leadership:.0f}</strong></div>
-                    <div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #8B5CF6; height: 100%; width: {min(100, cs.leadership)}%; border-radius: 2px;"></div></div>
-                </div>
-                <div>
-                    <div>Multi-School: <strong>{cs.multi_school:.0f}</strong></div>
-                    <div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #F59E0B; height: 100%; width: {min(100, cs.multi_school)}%; border-radius: 2px;"></div></div>
-                </div>
-                <div>
-                    <div>Skills & Exp: <strong>{cs.skills_experience:.0f}</strong></div>
-                    <div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #06B6D4; height: 100%; width: {min(100, cs.skills_experience)}%; border-radius: 2px;"></div></div>
-                </div>
-            </div>
-            """
+            score_bar_html = (
+                f'<div style="margin-top: 10px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; font-size: 0.72rem; color: #64748B;">'
+                f'<div><div>Semantic: <strong>{cs.semantic_similarity:.0f}</strong></div>'
+                f'<div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #3B82F6; height: 100%; width: {min(100, cs.semantic_similarity)}%; border-radius: 2px;"></div></div></div>'
+                f'<div><div>Ecosystem: <strong>{cs.school_ecosystem:.0f}</strong></div>'
+                f'<div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #10B981; height: 100%; width: {min(100, cs.school_ecosystem)}%; border-radius: 2px;"></div></div></div>'
+                f'<div><div>Leadership: <strong>{cs.leadership:.0f}</strong></div>'
+                f'<div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #8B5CF6; height: 100%; width: {min(100, cs.leadership)}%; border-radius: 2px;"></div></div></div>'
+                f'<div><div>Multi-School: <strong>{cs.multi_school:.0f}</strong></div>'
+                f'<div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #F59E0B; height: 100%; width: {min(100, cs.multi_school)}%; border-radius: 2px;"></div></div></div>'
+                f'<div><div>Skills & Exp: <strong>{cs.skills_experience:.0f}</strong></div>'
+                f'<div style="background: #E2E8F0; height: 4px; border-radius: 2px;"><div style="background: #06B6D4; height: 100%; width: {min(100, cs.skills_experience)}%; border-radius: 2px;"></div></div></div>'
+                f'</div>'
+            )
+
+            card_html = (
+                f'<div class="candidate-card">'
+                f'<div style="display: flex; justify-content: space-between; align-items: flex-start;">'
+                f'<div>'
+                f'<span style="font-size: 1.2rem; font-weight: 700; color: #0F172A;">#{cand.rank}. {p.name}</span>'
+                f'&nbsp;&nbsp;<span class="{badge_class}">{p.source_type}</span>'
+                f'<div style="color: #475569; font-weight: 600; margin-top: 4px; font-size: 0.95rem;">'
+                f'💼 {p.current_role} &nbsp;•&nbsp; 🏛️ {p.organization} &nbsp;•&nbsp; 📍 {p.location}'
+                f'</div>'
+                f'<div style="margin-top: 6px;">{chips_html}</div>'
+                f'</div>'
+                f'<div style="text-align: right; min-width: 120px;">{score_pill_html}</div>'
+                f'</div>'
+                f'{score_bar_html}'
+                f'<div style="margin-top: 12px; font-size: 0.9rem; color: #334155; background: #F8FAFC; padding: 10px 14px; border-radius: 8px; border-left: 3px solid #0D9488;">'
+                f'<strong>Why matched:</strong> {cand.explanation}'
+                f'</div>'
+                f'</div>'
+            )
 
             with st.container():
-                st.markdown(
-                    f"""
-                    <div class="candidate-card">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                            <div>
-                                <span style="font-size: 1.2rem; font-weight: 700; color: #0F172A;">#{cand.rank}. {p.name}</span>
-                                &nbsp;&nbsp;<span class="{badge_class}">{p.source_type}</span>
-                                <div style="color: #475569; font-weight: 600; margin-top: 4px; font-size: 0.95rem;">
-                                    💼 {p.current_role} &nbsp;•&nbsp; 🏛️ {p.organization} &nbsp;•&nbsp; 📍 {p.location}
-                                </div>
-                                <div style="margin-top: 6px;">
-                                    {chips_html}
-                                </div>
-                            </div>
-                            <div style="text-align: right; min-width: 120px;">
-                                {score_pill_html}
-                            </div>
-                        </div>
-                        {score_bar_html}
-                        <div style="margin-top: 12px; font-size: 0.9rem; color: #334155; background: #F8FAFC; padding: 10px 14px; border-radius: 8px; border-left: 3px solid #0D9488;">
-                            <strong>Why matched:</strong> {cand.explanation}
-                        </div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+                st.markdown(card_html, unsafe_allow_html=True)
 
                 card_cols = st.columns([7, 1.5, 1.5])
                 with card_cols[1]:
@@ -942,7 +942,9 @@ elif nav_choice == "3. Ranked Results":
                         st.session_state.selected_candidate_id = p.profile_id
                         st.info(f"Selected **{p.name}**. Switch to **'4. Profile Details'** for deep dive.")
                 with card_cols[2]:
-                    st.link_button("🌐 Profile URL", p.linkedin_url)
+                    resolved_url = get_profile_url(p)
+                    btn_label = "🔍 Search on LinkedIn" if "example.com" in p.linkedin_url else "🌐 Profile URL"
+                    st.link_button(btn_label, resolved_url)
 
 
 # ==============================================================================
@@ -1030,7 +1032,11 @@ elif nav_choice == "4. Profile Details":
             st.markdown(f"**Location:** {p.location}")
             st.markdown(f"**Professional Experience:** {p.experience_years} years")
             st.markdown(f"**Provenance:** `{p.source_type}`")
-            st.markdown(f"**Profile URL:** [{p.linkedin_url}]({p.linkedin_url})")
+            resolved_p_url = get_profile_url(p)
+            if "example.com" in p.linkedin_url:
+                st.markdown(f"**Profile URL:** [{p.linkedin_url}]({resolved_p_url}) *(Synthetic Record — click to search on LinkedIn)*")
+            else:
+                st.markdown(f"**Profile URL:** [{p.linkedin_url}]({resolved_p_url})")
 
             st.markdown("#### Professional Summary")
             st.write(p.professional_summary if p.professional_summary else "Not specified")
